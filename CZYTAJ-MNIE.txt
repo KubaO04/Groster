@@ -1,0 +1,46 @@
+GROSTER — uporządkowany projekt HTML, CSS i JavaScript
+
+Zacznij od otwarcia index.html w przeglądarce.
+Nie musisz instalować pakietów ani uruchamiać serwera.
+
+KOLEJNOŚĆ CZYTANIA KODU:
+1. index.html — struktura strony głównej.
+2. style.css — wspólny wygląd wszystkich stron, także na telefonach.
+3. script.js — menu, galerie, filtry, wyszukiwarka i formularze.
+
+MOTYW DARK GARAGE — 05.11.2026:
+- Grafitowe tło, białe napisy i limonkowy akcent.
+- Szeroki baner z dużymi zdjęciami własnych realizacji Groster.
+- Duże nagłówki w motoryzacyjnym stylu i wyraźne przyciski.
+- Spójny ciemny motyw wszystkich 49 stron, w tym produktów i kontaktu.
+- Kierunek wizualny inspirowany podglądem Car Repair #52961 z TemplateMonster.
+- Własny kod HTML, CSS i JavaScript; zdjęcia pochodzą z oferty Groster.
+
+INTERAKCJE:
+- Sekcje i karty pojawiają się podczas przewijania (IntersectionObserver).
+- Na stronie głównej trzy zdjęcia zmieniane strzałkami lub kropkami.
+- „Pomóż mi wybrać” otwiera panel wysuwany z prawej strony.
+- W panelu trzy potrzeby prowadzą do odpowiedniej oferty i kontaktu.
+- Pasek u góry pokazuje postęp przewijania strony.
+- Po przewinięciu pojawia się przycisk szybkiego doboru zabudowy.
+- Ustawienie „ogranicz ruch” wyłącza animacje. Escape zamyka panel.
+- Bez JavaScript główne treści i odnośniki pozostają dostępne.
+
+POZOSTAŁE PLIKI:
+podstrony/ — 48 podstron HTML. Każda korzysta z tego samego CSS i JavaScript.
+obrazki/ — wszystkie 112 obrazków w jednym folderze.
+obrazki.zip — te same obrazki spakowane do jednego pliku.
+dokumenty/ — katalog PDF firmy.
+
+Ścieżki do stron, zdjęć i skryptów są względne. Możesz przenieść cały katalog
+w inne miejsce. Zachowaj jego wewnętrzny układ i nie rozpakowuj samych
+plików index.html bez pozostałych folderów.
+
+Kod ma kodowanie UTF-8. Fonty z Google Fonts są opcjonalnie pobierane
+z internetu; bez połączenia strona korzysta z czcionki systemowej.
+Formularz przygotowuje wiadomość w programie pocztowym i jej kopię .txt.
+Wysłanie e-maila wymaga działania użytkownika oraz połączenia z internetem.
+Nie dodano backendu do automatycznego wysyłania wiadomości.
+
+Przed zmianą motywu zachowano kopię głównych plików w katalogu
+groster-redesign/kopia-przed-motywem-dark (obok folderu tego projektu).
