@@ -8,15 +8,17 @@ KOLEJNOŚĆ CZYTANIA KODU:
 2. style.css — wspólny wygląd wszystkich stron, także na telefonach.
 3. script.js — menu, galerie, filtry, wyszukiwarka i formularze.
 
-MOTYW DARK GARAGE — 05.11.2026:
-- Grafitowe tło, białe napisy i limonkowy akcent.
-- Szeroki baner z dużymi zdjęciami własnych realizacji Groster.
-- Duże nagłówki w motoryzacyjnym stylu i wyraźne przyciski.
-- Spójny ciemny motyw wszystkich 49 stron, w tym produktów i kontaktu.
-- Kierunek wizualny inspirowany podglądem Car Repair #52961 z TemplateMonster.
-- Własny kod HTML, CSS i JavaScript; zdjęcia pochodzą z oferty Groster.
+POPRAWKI CZYTELNOŚCI I ZDJĘĆ:
+- Opisy i treści mają zwykle 16–18 px, a teksty pomocnicze co najmniej 12 px.
+- Większe przyciski, etykiety, pola formularzy i wygodniejsze odstępy.
+- Podpisy galerii głównej przeniesiono pod zdjęcia.
+- Zdjęcia pojazdów i produktów mieszczą się w całości, bez przycinania kadrów.
+- W wybranych miejscach wykorzystano większe fotografie dostępne w materiałach Groster.
+- Dodano wymiary źródłowe obrazów, aby ograniczyć przesuwanie treści.
+- Menu mobilne pojawia się wcześniej, a karty na telefonie mają jedną kolumnę.
 
-INTERAKCJE:
+NOWE KOLORY I INTERAKCJE:
+- Turkus, pomarańcz, jasna limonka i błękitne akcenty.
 - Sekcje i karty pojawiają się podczas przewijania (IntersectionObserver).
 - Na stronie głównej trzy zdjęcia zmieniane strzałkami lub kropkami.
 - „Pomóż mi wybrać” otwiera panel wysuwany z prawej strony.
@@ -28,7 +30,7 @@ INTERAKCJE:
 
 POZOSTAŁE PLIKI:
 podstrony/ — 48 podstron HTML. Każda korzysta z tego samego CSS i JavaScript.
-obrazki/ — wszystkie 112 obrazków w jednym folderze.
+obrazki/ — wszystkie 173 obrazki w jednym folderze: oryginały, 53 wersje HQ i 6 retuszy.
 obrazki.zip — te same obrazki spakowane do jednego pliku.
 dokumenty/ — katalog PDF firmy.
 
@@ -36,11 +38,87 @@ dokumenty/ — katalog PDF firmy.
 w inne miejsce. Zachowaj jego wewnętrzny układ i nie rozpakowuj samych
 plików index.html bez pozostałych folderów.
 
-Kod ma kodowanie UTF-8. Fonty z Google Fonts są opcjonalnie pobierane
+Kod ma kodowanie UTF-8. Font z Google Fonts jest opcjonalnie pobierany
 z internetu; bez połączenia strona korzysta z czcionki systemowej.
-Formularz przygotowuje wiadomość w programie pocztowym i jej kopię .txt.
+Formularz na stronie Zamówienie przygotowuje wiadomość w programie pocztowym i jej kopię .txt.
 Wysłanie e-maila wymaga działania użytkownika oraz połączenia z internetem.
 Nie dodano backendu do automatycznego wysyłania wiadomości.
 
-Przed zmianą motywu zachowano kopię głównych plików w katalogu
-groster-redesign/kopia-przed-motywem-dark (obok folderu tego projektu).
+GRAFIKI PRODUKTÓW:
+Przy haku, słupku środkowym, zamku pionowym burty i profilu aluminiowym
+rowerowym zastosowano oryginalną ikonę zastępczą ze starej strony Groster:
+obrazki/woocommerce-placeholder-1024x1024.png.
+Wygenerowane ilustracje nie są używane w stronie ani dołączone do jej paczki.
+
+WERYFIKACJA PRZYPISANIA ZDJĘĆ:
+- Porównano 41 publicznych stron oryginału oraz wszystkie 17 produktów.
+- Ściany mają oryginalną grafikę zestawu okładzin zamiast miniatury samochodu.
+- Poprawiono zdjęcia podłóg do Peugeot Partner i Peugeot Expert.
+- Galerie 10 produktów oczyszczono z miniatur sąsiednich produktów.
+- Miniatury kategorii, zdjęcia główne i galerie mają osobno sprawdzone źródła.
+- Sprawdzono także przypisania zdjęć w ofercie i galeriach realizacji.
+- W akcesoriach usunięto zdjęcie zapożyczone z działu furgonów:
+  karty bez oryginalnego zdjęcia używają ikony zastępczej.
+
+POPRAWA JAKOŚCI ZDJĘĆ:
+- Sprawdzono 239 pozycji biblioteki Groster i 84 obrazy osadzone w katalogu PDF.
+- 50 fotografii zastąpiono większymi oryginałami z katalogu (zwykle 500–1080 px).
+- Dodano 2 większe oryginalne pliki logo. Nagłówek korzysta z wersji 400 px.
+- Okładkę katalogu odtworzono bezpośrednio z oryginalnego PDF: 849 × 1200 px.
+- Nowe pliki mają końcówkę -hq; wcześniejsze pliki zachowano w folderze obrazki.
+- Podmieniono też odnośniki do pełnych zdjęć w galeriach.
+- Oferta i produkty mają trzy karty obok siebie na komputerach, dwie na tabletach i jedną na telefonach.
+- Pojedynczy produkt zachowuje szerszą kartę.
+- Usunięto limity blokujące powiększanie obrazków na stronie.
+- Trzy miniatury aut 101–116 px oraz trzy fotografie z banera poprawiono narzędziem imagegen.
+- Nowe wersje -retusz.png mają około 1500–1800 px szerokości.
+- 61 wystąpień rysunków pokazuje większy obiekt dzięki pominięciu pustych marginesów w CSS.
+- Usunięto osobny przycisk Powiększ zdjęcie przy głównych zdjęciach produktów.
+- Rysunki techniczne i produkty zachowują oryginalny wygląd oraz geometrię.
+- Dwa zdjęcia PDF mają odbitą orientację; CSS odtwarza kierunek ze starej strony.
+- Retusz AI odtwarza szczegóły obrazu; rysunki techniczne zachowano bez takiego retuszu.
+- Opis retuszu i komplet użytych promptów: dokumenty/retusz-zdjec-prompty.md.
+- Źródła większych plików i ich wymiary: dokumenty/zrodla-zdjec-hq.json.
+
+GALERIE W SZCZEGÓŁACH OFERTY:
+- Wszystkie zdjęcia danej oferty są teraz w miejscu zdjęcia głównego.
+- Strzałki w lewo i w prawo przełączają fotografie, także klawiszami ← i →.
+- Automatyczna zmiana następuje co 2,5 sekundy; po ostatnim zdjęciu wraca pierwsze.
+- Dyskretne strzałki bez dużego tła; usunięto widoczny licznik i przycisk zatrzymania.
+- Kliknięcie zdjęcia otwiera duży podgląd i chwilowo zatrzymuje karuzelę.
+- Po zamknięciu podglądu lub powrocie do karty odliczanie zaczyna się od nowa.
+- Przy systemowym ograniczeniu ruchu zdjęcia zmienia się strzałkami.
+- Modernizacje mają jedno zdjęcie, więc nie pokazują niepotrzebnych strzałek.
+
+LOGO I TELEFON:
+- W stopce widnieje oryginalne logo Groster, zgodne ze znakiem w nagłówku.
+- Wersja biała jest wyświetlana na ciemnym tle; plik oryginalny pozostaje bez zmian.
+- Numer w topbarze ma 16 px, o 2 px więcej niż godziny pracy (14 px), i nie jest linkiem.
+
+MENU:
+- Małe strzałki SVG przy Ofercie i Produktach, zgodne z wyglądem chevronów.
+- Stały odstęp między nazwą a strzałką; po rozwinięciu przyciski nie zmieniają szerokości.
+- Na telefonie strzałka pozostaje obok nazwy, a lista zajmuje pełną szerokość menu.
+
+KONTAKT:
+- Usunięto przycisk Porozmawiajmy z nagłówka wszystkich stron.
+- Na stronie Kontakt usunięto formularz Przygotuj zapytanie.
+- Po prawej stronie danych kontaktowych znajduje się oryginalna mapa Google ze starej strony.
+- Na telefonie mapa pojawia się pod danymi firmy. Do załadowania mapy potrzebny jest internet.
+
+CENY PODŁÓG:
+- Widełki widocznych modeli pochodzą ze strony https://groster.pl/kategoria-produktu/podlogi/.
+- Kwoty sprawdzono 5 listopada 2026 i przypisano według adresów produktów.
+- Ceny widnieją pod zdjęciami na liście podłóg, w Produktach oraz na stronach modeli.
+- Źródła, kwoty minimalne i maksymalne: dokumenty/zrodla-cen-podlog.json.
+
+PRODUKT JUMPER:
+- Pozycję Jumpy zastąpiono kompletnym produktem Citroen Jumper: zdjęciem, opisem i ceną 1 100–2 080 zł.
+- Na listach Jumper występuje raz. Katalog zawiera 16 produktów, w tym 11 podłóg.
+- Dotychczasowy adres Jumpy nadal działa i wyświetla Jumpera; zachowano 49 stron HTML.
+- Home ma ten sam znacznik topbar-phone co podstrony: numer +48 609 328 095 jest nieklikalny i ma 16 px.
+
+IKONKA KARTY:
+- Oryginalny znak auta Groster zastępuje literę G we wszystkich 49 stronach.
+- Pliki: obrazki/favicon-groster.ico oraz obrazki/apple-icon-groster.png.
+- Oryginały pobrano z https://groster.pl/wp-content/uploads/2019/06/.

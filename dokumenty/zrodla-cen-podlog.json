@@ -1,0 +1,98 @@
+{
+  "source_url": "https://groster.pl/kategoria-produktu/podlogi/",
+  "checked_on": "2026-11-05",
+  "products": {
+    "podloga-citroen-berlingo": {
+      "title": "Podłoga Citroen Berlingo",
+      "product_url": "https://groster.pl/produkt/podloga-citroen-berlingo/",
+      "minimum": "650.00",
+      "maximum": "780.00",
+      "currency": "PLN",
+      "display_price": "650–780 zł"
+    },
+    "podloga-citroen-jumper": {
+      "title": "Podłoga Citroen Jumper",
+      "product_url": "https://groster.pl/produkt/podloga-citroen-jumper/",
+      "minimum": "1100.00",
+      "maximum": "2080.00",
+      "currency": "PLN",
+      "display_price": "1 100–2 080 zł"
+    },
+    "podloga-fiat-doblo": {
+      "title": "Podłoga Fiat Doblo",
+      "product_url": "https://groster.pl/produkt/podloga-fiat-doblo/",
+      "minimum": "650.00",
+      "maximum": "780.00",
+      "currency": "PLN",
+      "display_price": "650–780 zł"
+    },
+    "podloga-fiat-ducato": {
+      "title": "Podłoga Fiat Ducato",
+      "product_url": "https://groster.pl/produkt/podloga-fiat-ducato/",
+      "minimum": "1100.00",
+      "maximum": "2080.00",
+      "currency": "PLN",
+      "display_price": "1 100–2 080 zł"
+    },
+    "podloga-fiat-scudo": {
+      "title": "Podłoga Fiat Scudo",
+      "product_url": "https://groster.pl/produkt/podloga-fiat-scudo/",
+      "minimum": "700.00",
+      "maximum": "1290.00",
+      "currency": "PLN",
+      "display_price": "700–1 290 zł"
+    },
+    "podloga-fiat-combo": {
+      "title": "Podłoga Opel Combo",
+      "product_url": "https://groster.pl/produkt/podloga-fiat-combo/",
+      "minimum": "650.00",
+      "maximum": "780.00",
+      "currency": "PLN",
+      "display_price": "650–780 zł"
+    },
+    "podloga-opel-movano": {
+      "title": "Podłoga Opel Movano",
+      "product_url": "https://groster.pl/produkt/podloga-opel-movano/",
+      "minimum": "1100.00",
+      "maximum": "2080.00",
+      "currency": "PLN",
+      "display_price": "1 100–2 080 zł"
+    },
+    "podloga-opel-vivaro": {
+      "title": "Podłoga Opel Vivaro",
+      "product_url": "https://groster.pl/produkt/podloga-opel-vivaro/",
+      "minimum": "700.00",
+      "maximum": "1290.00",
+      "currency": "PLN",
+      "display_price": "700–1 290 zł"
+    },
+    "podloga-peugeot-boxer": {
+      "title": "Podłoga Peugeot Boxer",
+      "product_url": "https://groster.pl/produkt/podloga-peugeot-boxer/",
+      "minimum": "1100.00",
+      "maximum": "2080.00",
+      "currency": "PLN",
+      "display_price": "1 100–2 080 zł"
+    },
+    "podloga-peugeot-expert": {
+      "title": "Podłoga Peugeot Expert",
+      "product_url": "https://groster.pl/produkt/podloga-peugeot-expert/",
+      "minimum": "700.00",
+      "maximum": "1290.00",
+      "currency": "PLN",
+      "display_price": "700–1 290 zł"
+    },
+    "peugeot-partner": {
+      "title": "Podłoga Peugeot Partner",
+      "product_url": "https://groster.pl/produkt/peugeot-partner/",
+      "minimum": "650.00",
+      "maximum": "780.00",
+      "currency": "PLN",
+      "display_price": "650–780 zł"
+    }
+  },
+  "aliases": {
+    "podloga-citroen-jumpy": "podloga-citroen-jumper"
+  },
+  "source_product_count": 12
+}

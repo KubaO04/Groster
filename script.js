@@ -69,8 +69,19 @@ let previousFocus;
 document.querySelectorAll('[data-image]').forEach(button => {
   button.addEventListener('click', () => {
     previousFocus = button;
-    dialog.querySelector('img').src = button.dataset.image;
-    dialog.querySelector('img').alt = button.dataset.alt;
+    const thumbnail = button.querySelector('img') || button.closest('.product-detail-photo')?.querySelector('img');
+    const fullImage = dialog.querySelector('img');
+    const viewport = dialog.querySelector('.lightbox-crop');
+    const crop = thumbnail?.closest('.media-crop');
+    viewport.classList.toggle('media-crop', Boolean(crop));
+    viewport.style.cssText = crop?.style.cssText || '';
+    fullImage.dataset.sourceMirrored = thumbnail?.dataset.sourceMirrored || 'false';
+    if (thumbnail) {
+      fullImage.width = Number(thumbnail.dataset.sourceWidth) || thumbnail.naturalWidth;
+      fullImage.height = Number(thumbnail.dataset.sourceHeight) || thumbnail.naturalHeight;
+    }
+    fullImage.src = button.dataset.image;
+    fullImage.alt = button.dataset.alt;
     dialog.querySelector('p').textContent = button.dataset.alt;
     dialog.showModal();
   });
@@ -139,14 +150,14 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', event => {
 });
 
 // ============================================================
-// DARK GARAGE — pojawianie się sekcji, galeria i wysuwany panel.
+// KOLOR I RUCH — pojawianie się sekcji, galeria i wysuwany panel.
 // ============================================================
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // Elementy pojawiają się raz, gdy wejdą w obszar ekranu.
 // Przy wyłączonym JavaScript lub ograniczonym ruchu pozostają widoczne.
 const revealElements = Array.from(document.querySelectorAll([
-  '.hero-copy > *', '.quick-start-strip > .container',
+  '.hero-copy > *', '.hero-slider', '.quick-start-strip > .container',
   '.section-heading', '.service-card', '.about-grid > div',
   '.project-preview > a', '.steps article', '.project-card', '.product-card',
   '.cta .container > div', '.page-top .container', '.enquiry-box', '.contact-form'
@@ -250,6 +261,78 @@ if (heroSlider) {
   });
   controls.hidden = false;
 }
+
+// Zdjęcia szczegółów oferty: wspólny duży kadr i zmiana co 2,5 sekundy.
+function initializeOfferSlider(slider) {
+  const slides = Array.from(slider.querySelectorAll('[data-offer-slide]'));
+  if (!slides.length) return;
+  const arrows = Array.from(slider.querySelectorAll('[data-offer-direction]'));
+  const status = slider.querySelector('[data-offer-status]');
+  const delay = Number(slider.dataset.offerDelay) || 2500;
+  let active = 0;
+  let timer = 0;
+  let animation;
+
+  function stopAutoplay() {
+    window.clearTimeout(timer);
+    timer = 0;
+  }
+
+  function scheduleAutoplay() {
+    stopAutoplay();
+    if (slides.length < 2 || reducedMotion.matches || document.hidden || dialog?.open) return;
+    timer = window.setTimeout(() => {
+      showSlide(active + 1);
+      scheduleAutoplay();
+    }, delay);
+  }
+
+  function showSlide(index, announce = false) {
+    active = (index + slides.length) % slides.length;
+    animation?.cancel();
+    slides.forEach((slide, i) => { slide.hidden = i !== active; });
+    const current = slides[active];
+    current.querySelector('img').loading = 'eager';
+    // Wczytaj kolejne zdjęcie wcześniej, aby zmiana nie pokazywała pustego kadru.
+    const nextImage = slides[(active + 1) % slides.length].querySelector('img');
+    nextImage.loading = 'eager';
+    nextImage.fetchPriority = 'low';
+    if (announce) status.textContent = `Zdjęcie ${active + 1} z ${slides.length}`;
+    if (!reducedMotion.matches && typeof current.animate === 'function') {
+      animation = current.animate([{ opacity: 0.3 }, { opacity: 1 }], {
+        duration: 240, easing: 'ease-out'
+      });
+    }
+  }
+
+  slider.classList.add('is-ready');
+  showSlide(0);
+  if (slides.length < 2) return;
+  arrows.forEach(button => {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      showSlide(active + Number(button.dataset.offerDirection), true);
+      scheduleAutoplay();
+    });
+  });
+  slider.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showSlide(active + (event.key === 'ArrowRight' ? 1 : -1), true);
+    scheduleAutoplay();
+  });
+  slider.querySelectorAll('[data-image]').forEach(button => {
+    button.addEventListener('click', stopAutoplay);
+  });
+  dialog?.addEventListener('close', scheduleAutoplay);
+  document.addEventListener('visibilitychange', scheduleAutoplay);
+  window.addEventListener('pagehide', stopAutoplay);
+  window.addEventListener('pageshow', scheduleAutoplay);
+  reducedMotion.addEventListener('change', scheduleAutoplay);
+  scheduleAutoplay();
+}
+
+document.querySelectorAll('[data-offer-slider]').forEach(initializeOfferSlider);
 
 // Wysuwany dobór zabudowy. Dialog obsługuje Tab, Escape i powrót fokusu.
 const fitDrawer = document.querySelector('#fit-drawer');
