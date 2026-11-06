@@ -3694,3 +3694,189 @@ img[data-source-mirrored="true"] {
   font-size: 26px;
 }
 
+/* Strona główna: jasne szarości, białe karty i turkus z logo Groster.
+   Paleta jest ograniczona do .home-page, także w panelach i na telefonie. */
+.home-page {
+  --ink: #172d2d;
+  --green: #005a5b;
+  --green-dark: #004647;
+  --paper: #f3f5f4;
+  --line: #dce3e1;
+  --muted: #536362;
+  --home-white: #fff;
+  --home-soft: #edf1f0;
+  --home-accent-soft: #dcebea;
+  /* Wspólne komponenty przejmują tę samą paletę. */
+  --orange: var(--green);
+  --coral: var(--green);
+  --coral-pale: var(--home-soft);
+  --lime: var(--home-accent-soft);
+  --blue-pale: var(--home-soft);
+  --mint: var(--home-accent-soft);
+}
+
+.home-page .topbar { background: var(--green-dark); }
+.home-page .header { background: rgba(243, 245, 244, .98); }
+.home-page .submenu { background: var(--home-white); }
+.home-page .submenu a:hover { background: var(--home-accent-soft); }
+.home-page .colorful-hero { background: var(--paper); }
+
+.home-page .colorful-hero .hero-label {
+  color: var(--green);
+  background: transparent;
+  border-color: transparent;
+}
+
+.home-page .eyebrow > span { background: var(--green); }
+.home-page .colorful-hero .hero-copy > p { color: var(--muted); }
+.home-page .colorful-hero h1 em {
+  background: linear-gradient(transparent 79%, var(--home-accent-soft) 79%, var(--home-accent-soft) 94%, transparent 94%);
+}
+
+.home-page .colorful-hero .hero-actions > .button {
+  color: var(--home-white);
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 5px 14px #003f4014;
+}
+
+.home-page .colorful-hero .hero-actions > .button:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+}
+
+.home-page .hero-tags > span {
+  color: var(--muted);
+  background: var(--home-soft);
+}
+
+.home-page .hero-visual.hero-slider {
+  background: var(--home-white);
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 40px #173a3510;
+}
+
+.home-page .hero-slide-stage { background: var(--home-soft); }
+.home-page .hero-caption small { color: var(--muted); }
+.home-page .slider-controls { border-color: var(--line); }
+.home-page .slider-controls > button {
+  color: var(--green);
+  background: var(--home-white);
+  border-color: var(--line);
+}
+.home-page .slider-controls > button:hover { background: var(--home-accent-soft); }
+.home-page .slider-dots button::after { background: #7d9590; }
+.home-page .slider-dots button[aria-current='true']::after { background: var(--green); }
+
+.home-page .capability-strip {
+  background: var(--green);
+  border-color: var(--green);
+}
+.home-page .capability-strip span,
+.home-page .capability-strip span:first-child {
+  color: var(--home-white);
+  border-color: #ffffff40;
+}
+.home-page .capability-strip i { color: var(--home-white); }
+.home-page .capability-strip b,
+.home-page .capability-strip span:first-child b { color: var(--home-white); }
+
+.home-page .quick-start-strip {
+  background: var(--home-soft);
+  border-bottom: 1px solid var(--line);
+}
+.home-page .quick-start-actions > button {
+  color: var(--home-white);
+  background: var(--green);
+  border-color: var(--green);
+}
+.home-page .quick-start-actions > button > span { color: var(--home-white); }
+.home-page .quick-start-actions > button:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+}
+
+.home-page .service-card,
+.home-page .project-preview > a {
+  background: var(--home-accent-soft);
+  border: 0;
+  border-radius: 0;
+}
+.home-page .card-photo,
+.home-page .project-preview img,
+.home-page .about-photo { background: var(--home-soft); }
+
+/* Ramki jak w sekcji „Poznaj Groster”: prosty kadr 4:3, szary margines
+   i jasnoturkusowy podpis. Całe zdjęcie pozostaje widoczne. */
+.home-page .card-photo,
+.home-page .project-preview img { aspect-ratio: 4 / 3; }
+.home-page .card-photo img,
+.home-page .project-preview img {
+  padding: 12px;
+  object-fit: contain;
+}
+.home-page .service-card .card-content,
+.home-page .project-preview a > div {
+  color: var(--green);
+  background: var(--home-accent-soft);
+}
+.home-page .service-card .photo-no { border-radius: 0; }
+.home-page .service-card .photo-no,
+.home-page .photo-tag {
+  color: var(--green);
+  background: var(--home-accent-soft);
+}
+.home-page .about-section { background: var(--home-white); }
+.home-page .process { background: var(--home-soft); }
+.home-page .steps article {
+  background: var(--home-white);
+  border-top-color: var(--green);
+}
+
+.home-page .cta { background: var(--green); }
+.home-page .cta::after { border-color: #ffffff; opacity: .07; }
+.home-page .cta .eyebrow > span { background: var(--home-accent-soft); }
+.home-page .cta .eyebrow,
+.home-page .cta p { color: var(--home-accent-soft); }
+.home-page .cta .button.light {
+  color: var(--green);
+  background: var(--home-white);
+  border-color: var(--home-white);
+}
+.home-page .cta .button.light:hover { background: var(--home-accent-soft); }
+.home-page footer { background: #163333; color: #dce7e5; }
+.home-page footer p,
+.home-page .footer-bottom { color: #b4c7c3; }
+.home-page .footer-logo span { color: var(--home-accent-soft); }
+
+.home-page .fit-drawer { background: var(--paper); }
+.home-page .drawer-top { border-bottom-color: #ffffff30; }
+.home-page .fit-choices > button {
+  background: var(--home-white);
+  border-color: var(--line);
+}
+.home-page .fit-choices > button:hover { border-color: #b7ceca; }
+.home-page .fit-choices > button[aria-pressed='true'] {
+  background: var(--home-accent-soft);
+  border-color: var(--green);
+}
+.home-page .fit-choices button > span:first-child { color: var(--green); }
+.home-page .fit-choices small { color: var(--muted); }
+.home-page .fit-result p { color: var(--home-accent-soft); }
+.home-page .fit-result .button {
+  color: var(--green);
+  background: var(--home-white);
+  border-color: var(--home-white);
+}
+.home-page .fit-result .button:hover { background: var(--home-accent-soft); }
+.home-page .floating-fit {
+  color: var(--home-white);
+  background: var(--green);
+  border-color: var(--green);
+}
+.home-page .floating-fit:hover { background: var(--green-dark); }
+.home-page .scroll-progress { background: var(--green); }
+.home-page :is(.cta, footer, .topbar, .drawer-top, .fit-result) :focus-visible {
+  outline-color: var(--home-accent-soft);
+}
+

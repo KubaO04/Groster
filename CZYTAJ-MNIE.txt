@@ -18,7 +18,14 @@ POPRAWKI CZYTELNOŚCI I ZDJĘĆ:
 - Menu mobilne pojawia się wcześniej, a karty na telefonie mają jedną kolumnę.
 
 NOWE KOLORY I INTERAKCJE:
-- Turkus, pomarańcz, jasna limonka i błękitne akcenty.
+- Strona główna: jasnoszare tło #f3f5f4, białe karty i turkus Groster #005a5b.
+- Jednolita paleta także w niższych sekcjach, sterowaniu galerii i panelu doboru.
+- Główny przycisk jest turkusowy z białym tekstem; podkreślenie hasła ma jasny turkus.
+- Pasek „Jeden partner” i trzy przyciski pod nim są turkusowe, z białymi napisami i strzałkami.
+- Karty oferty i realizacji na stronie głównej mają ramki jak w sekcji „Poznaj Groster”:
+  proste narożniki, jasnoszare pole 4:3, margines 12 px i jasnoturkusowy pas opisu.
+- Ostatnia sekcja CSS (.home-page) odpowiada za nową paletę strony głównej.
+- Pozostałe podstrony zachowują wcześniejsze akcenty kolorystyczne.
 - Sekcje i karty pojawiają się podczas przewijania (IntersectionObserver).
 - Na stronie głównej trzy zdjęcia zmieniane strzałkami lub kropkami.
 - „Pomóż mi wybrać” otwiera panel wysuwany z prawej strony.
